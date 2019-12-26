@@ -1,0 +1,207 @@
+@import 'mixins';
+
+#sfs-main *{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+#sfs-main{
+    margin-top: 50px;
+
+    .sfs-container{
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    h1.sfs-title{
+        font-size: 20px;
+        margin: 0;
+    }
+
+    .sfs-form{
+        background-color: #02122c;
+        padding: 24px;
+        margin: 20px -24px 20px -24px;
+        border-radius: 4px;
+
+        .sfs-form-group{
+            @include clearfix();
+            margin: 0 -5px;
+
+            .sfs-form-location{
+                float: left;
+                width: 40%;
+                padding: 0 5px;
+            }
+            
+            .sfs-form-depart{
+                float: left;
+                width: 20%;
+                padding: 0 5px;
+            }
+        }
+
+        .sfs-form-submit-row{
+            margin-top: 20px;
+            text-align: right;
+        }
+
+        .sfs-form-label{
+
+            label{
+                color: #fff;
+                font-size: 12px;
+            }
+        }
+
+        .sfs-form-input{
+            margin-top: 5px;
+
+            input[type=text]{
+                border-radius: 4px;
+                border: 0;
+                padding: 10px 8px;
+                width: 100%;
+            }
+
+            .react-datepicker-wrapper{
+                width: 100%;
+            }
+
+            .sfs-form-submit-btn{
+                cursor: pointer;
+                background-color: #00a698;
+                color: #fff;
+                border: 0;
+                padding: 10px 20px;
+                border-radius: 4px;
+
+                &:hover{
+                    color: darken(#fff, 7.5%);
+                    background-color: darken(#00a698, 7.5%);
+                }
+            }
+        }
+    }
+
+    .sfs-place-item{
+        cursor: pointer;
+        position: relative;
+        padding: 10px 40px;
+
+        &:before{
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            width: 18px;
+            height: 18px;
+            background-image: url(../images/plane.svg);
+        }        
+
+        .sfs-place-name{
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        .sfs-country-name{
+            margin-top: 5px;
+            font-size: 12px;
+        }
+
+        &:hover{
+            background-color: #deebff;
+        }
+    }
+
+    .sfs-place-item+.sfs-place-item{
+        border-top: 1px solid #aaa;
+    }
+
+    .sfs-flight-quote{
+        margin-bottom: 12px;
+        display: flex;
+
+        .sfs-flight-info{
+            padding: 30px 12px;
+            box-shadow: 0 1px 3px 0 rgba(37,32,31,.3);
+            background-color: #fff;
+            flex: 3;
+
+            .sfs-flight-carriers{
+                font-size: 12px;
+                text-align: center;
+            }
+
+            .sfs-flight-place {
+                margin-top: 10px;
+                display: flex;
+                justify-content: center;
+
+                .sfs-flight-place-line{
+                    margin: 0 30px 0 10px;
+                    position: relative;
+                    display: inline-block;
+                    width: 100px;
+
+                    &:before{
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        margin-top: -1px;
+                        left: 0;
+                        right: 0;
+                        height: 2px;
+                        background-color: #68697f;
+                    }
+
+                    &:after{
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        margin-top: -6px;
+                        right: -21px;
+                        height: 12px;
+                        width: 12px;
+                        background-image: url(../images/plane.svg);
+                        background-position: center center;
+                        background-repeat: no-repeat;
+                    }
+                }
+            }
+
+            .sfs-flight-departure-date{
+                margin-top: 10px;
+                text-align: center;
+                font-size: 12px;
+                font-weight: 500;
+            }
+        }
+
+        .sfs-flight-price{
+            padding: 30px 12px;
+            box-shadow: 0 1px 3px 0 rgba(37,32,31,.3);
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+
+            div{
+                font-weight: 500;
+                font-size: 25px;
+            }
+        }
+    }
+
+    .sfs-ajax-spin{
+        height: 38px;
+        background-image: url(../images/ajax-spin.gif);
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+
+    .sfs-error{
+        color: #ff0000;
+    }
+}
